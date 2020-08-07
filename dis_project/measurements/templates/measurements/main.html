@@ -1,0 +1,15 @@
+{% extends 'measurements/base.html' %}
+{% block title %}
+    calculated distance
+{% endblock %}
+{% block content %}
+{{ map|safe }}
+<form method="POST" autocomplete="off">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" class="=btn btn-primary">confirm</button>
+</form>
+<br>
+This product includes GeoLite2 data created by MaxMind, available from
+<a href="https://www.maxmind.com">https://www.maxmind.com</a>
+{% endblock content %}
